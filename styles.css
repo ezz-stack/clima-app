@@ -1,0 +1,1147 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+
+body {
+
+
+    margin: 0;
+
+
+    padding: 0;
+
+
+    font-family: 'Montserrat', sans-serif;
+
+
+    background: linear-gradient(135deg, #a8dadc, #f1faee);
+
+
+    display: flex;
+
+
+    justify-content: center;
+
+
+    align-items: center;
+
+
+    min-height: 100vh;
+
+
+    color: #333;
+
+
+}
+
+
+
+.card {
+
+
+    width: 320px;
+
+
+    background: #ffffff;
+
+
+    border-radius: 20px;
+
+
+    padding: 25px;
+
+
+    text-align: center;
+
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+
+    display: flex;
+
+
+    flex-direction: column;
+
+
+    align-items: center;
+
+
+    overflow: hidden;
+
+
+}
+
+
+
+.header-nav {
+
+
+    display: flex;
+
+
+    justify-content: space-between;
+
+
+    align-items: center;
+
+
+    width: 100%;
+
+
+    margin-bottom: 20px;
+
+
+    font-size: 0.9em;
+
+
+    color: #888;
+
+
+}
+
+
+
+.nav-arrow {
+
+
+    font-weight: 600;
+
+
+    cursor: pointer;
+
+
+    padding: 0 5px;
+
+
+}
+
+
+
+.nav-date {
+
+
+    margin: 0 8px;
+
+
+    font-weight: 500;
+
+
+    cursor: pointer;
+
+
+}
+
+
+
+.nav-date.current-date {
+
+
+    color: #333;
+
+
+    font-weight: 700;
+
+
+}
+
+
+
+.search {
+
+
+    display: flex;
+
+
+    justify-content: center;
+
+
+    align-items: center;
+
+
+    width: 100%;
+
+
+    margin-bottom: 20px;
+
+
+}
+
+
+
+.search input {
+
+
+    border: none;
+
+
+    outline: none;
+
+
+    padding: 10px 15px;
+
+
+    border-bottom: 2px solid #eee;
+
+
+    background: transparent;
+
+
+    color: #333;
+
+
+    font-size: 1.1em;
+
+
+    flex-grow: 1;
+
+
+    text-align: center;
+
+
+    font-family: 'Montserrat', sans-serif;
+
+
+    font-weight: 500;
+
+
+}
+
+
+
+.search-history {
+
+
+    width: 100%;
+
+
+    text-align: left;
+
+
+    margin-bottom: 20px;
+
+
+}
+
+
+
+.search-history p {
+
+
+    font-size: 0.8em;
+
+
+    color: #888;
+
+
+    margin-bottom: 5px;
+
+
+    font-weight: 600;
+
+
+}
+
+
+
+.history-list {
+
+
+    display: flex;
+
+
+    gap: 10px;
+
+
+    flex-wrap: wrap;
+
+
+}
+
+
+
+.history-item {
+
+
+    font-size: 0.8em;
+
+
+    padding: 5px 10px;
+
+
+    background-color: #f1f1f1;
+
+
+    border-radius: 15px;
+
+
+    cursor: pointer;
+
+
+    transition: background-color 0.2s ease;
+
+
+}
+
+
+
+.history-item:hover {
+
+
+    background-color: #e0e0e0;
+
+
+}
+
+
+
+.error-message {
+
+
+    color: #e74c3c;
+
+
+    font-size: 0.9em;
+
+
+    margin-bottom: 15px;
+
+
+    font-weight: 500;
+
+
+}
+
+
+
+.loading-spinner {
+
+
+    border: 5px solid #f3f3f3;
+
+
+    border-top: 5px solid #a8dadc;
+
+
+    border-radius: 50%;
+
+
+    width: 50px;
+
+
+    height: 50px;
+
+
+    animation: spin 1s linear infinite;
+
+
+    margin-top: 30px;
+
+
+}
+
+
+
+@keyframes spin {
+
+
+    0% { transform: rotate(0deg); }
+
+
+    100% { transform: rotate(360deg); }
+
+
+}
+
+
+
+.weather-display {
+
+
+    width: 100%;
+
+
+}
+
+
+
+.weather-display .city {
+
+
+    font-size: 1.8em;
+
+
+    font-weight: 700;
+
+
+    text-transform: uppercase;
+
+
+    letter-spacing: 2px;
+
+
+    margin-bottom: 15px;
+
+
+}
+
+
+
+.main-weather-icon {
+
+
+    width: 120px;
+
+
+    height: 120px;
+
+
+    margin: 20px auto;
+
+
+    position: relative;
+
+
+}
+
+
+
+/* Iconos de clima */
+
+
+.main-weather-icon.clear::before {
+
+
+    content: '';
+
+
+    display: block;
+
+
+    width: 100%;
+
+
+    height: 100%;
+
+
+    border: 5px solid #333;
+
+
+    border-radius: 50%;
+
+
+    box-sizing: border-box;
+
+
+    animation: sun-spin 10s linear infinite;
+
+
+}
+
+
+
+@keyframes sun-spin {
+
+
+    0% { transform: rotate(0deg); }
+
+
+    100% { transform: rotate(360deg); }
+
+
+}
+
+
+
+/* Animación de nube mejorada */
+
+
+.main-weather-icon.cloudy {
+
+
+    position: relative;
+
+
+    width: 150px;
+
+
+    height: 100px;
+
+
+    margin: 20px auto;
+
+
+    overflow: hidden;
+
+
+}
+
+
+
+.main-weather-icon.cloudy::before,
+
+
+.main-weather-icon.cloudy::after {
+
+
+    content: '';
+
+
+    position: absolute;
+
+
+    background: #333;
+
+
+    border-radius: 50%;
+
+
+    animation: cloud-move 10s ease-in-out infinite;
+
+
+}
+
+
+
+.main-weather-icon.cloudy::before {
+
+
+    width: 100px;
+
+
+    height: 100px;
+
+
+    top: -10px;
+
+
+    left: 20px;
+
+
+    animation-delay: -2s;
+
+
+}
+
+
+
+.main-weather-icon.cloudy::after {
+
+
+    width: 80px;
+
+
+    height: 80px;
+
+
+    top: 5px;
+
+
+    left: 80px;
+
+
+    animation-delay: -4s;
+
+
+}
+
+
+
+@keyframes cloud-move {
+
+
+    0%, 100% { transform: translateX(0); }
+
+
+    50% { transform: translateX(20px); }
+
+
+}
+
+
+
+.main-weather-icon.rainy, .main-weather-icon.stormy {
+
+
+    position: relative;
+
+
+    overflow: hidden;
+
+
+    width: 100px;
+
+
+    height: 100px;
+
+
+}
+
+
+
+.main-weather-icon.rainy .rain-drop, .main-weather-icon.stormy .rain-drop {
+
+
+    position: absolute;
+
+
+    width: 5px;
+
+
+    height: 25px;
+
+
+    background: #333;
+
+
+    transform: rotate(45deg);
+
+
+    animation: rain 1s linear infinite;
+
+
+}
+
+
+
+.main-weather-icon.rainy .rain-drop:nth-child(1) { top: 20px; left: 10px; animation-delay: 0.1s; }
+
+
+.main-weather-icon.rainy .rain-drop:nth-child(2) { top: 40px; left: 30px; animation-delay: 0.3s; }
+
+
+.main-weather-icon.rainy .rain-drop:nth-child(3) { top: 60px; left: 50px; animation-delay: 0.5s; }
+
+
+.main-weather-icon.rainy .rain-drop:nth-child(4) { top: 30px; left: 70px; animation-delay: 0.7s; }
+
+
+.main-weather-icon.rainy .rain-drop:nth-child(5) { top: 50px; left: 90px; animation-delay: 0.9s; }
+
+
+
+.main-weather-icon.stormy .rain-drop:nth-child(1) { top: 20px; left: 10px; animation-delay: 0.1s; }
+
+
+.main-weather-icon.stormy .rain-drop:nth-child(2) { top: 40px; left: 30px; animation-delay: 0.3s; }
+
+
+.main-weather-icon.stormy .rain-drop:nth-child(3) { top: 60px; left: 50px; animation-delay: 0.5s; }
+
+
+.main-weather-icon.stormy .rain-drop:nth-child(4) { top: 30px; left: 70px; animation-delay: 0.7s; }
+
+
+.main-weather-icon.stormy .rain-drop:nth-child(5) { top: 50px; left: 90px; animation-delay: 0.9s; }
+
+
+
+
+@keyframes rain {
+
+
+    0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+
+
+    100% { transform: translateY(100px) rotate(45deg); opacity: 0; }
+
+
+}
+
+
+
+/* Nuevo icono para nieve */
+
+
+.main-weather-icon.snowy {
+
+
+    position: relative;
+
+
+    width: 100px;
+
+
+    height: 100px;
+
+
+    background: transparent;
+
+
+}
+
+
+
+.main-weather-icon.snowy::before,
+
+
+.main-weather-icon.snowy::after {
+
+
+    content: '';
+
+
+    position: absolute;
+
+
+    background: #333;
+
+
+    border-radius: 50%;
+
+
+    width: 8px;
+
+
+    height: 8px;
+
+
+    animation: snowfall 2s linear infinite;
+
+
+}
+
+
+.main-weather-icon.snowy::before {
+
+
+    top: 20px;
+
+
+    left: 30px;
+
+
+    animation-delay: 0.5s;
+
+
+}
+
+
+.main-weather-icon.snowy::after {
+
+
+    top: 50px;
+
+
+    left: 70px;
+
+
+    animation-delay: 1.2s;
+
+
+}
+
+
+
+@keyframes snowfall {
+
+
+    0% { transform: translateY(0); opacity: 1; }
+
+
+    100% { transform: translateY(80px); opacity: 0; }
+
+
+}
+
+
+
+/* Nuevo icono para niebla */
+
+
+.main-weather-icon.misty {
+
+
+    width: 160px;
+
+
+    height: 90px;
+
+
+    background: transparent;
+
+
+    border-radius: 50px;
+
+
+    position: relative;
+
+
+    overflow: hidden;
+
+
+}
+
+
+
+.main-weather-icon.misty::before,
+
+
+.main-weather-icon.misty::after {
+
+
+    content: '';
+
+
+    position: absolute;
+
+
+    background: #ccc;
+
+
+    height: 10px;
+
+
+    left: 0;
+
+
+    right: 0;
+
+
+    animation: mist 3s ease-in-out infinite;
+
+
+}
+
+
+.main-weather-icon.misty::before {
+
+
+    top: 30px;
+
+
+}
+
+
+.main-weather-icon.misty::after {
+
+
+    top: 60px;
+
+
+    animation-delay: 1.5s;
+
+
+}
+
+
+
+@keyframes mist {
+
+
+    0%, 100% { transform: translateX(0); }
+
+
+    50% { transform: translateX(20px); }
+
+
+}
+
+
+
+.weather-details-small {
+
+
+    display: flex;
+
+
+    justify-content: center;
+
+
+    gap: 40px;
+
+
+    margin-bottom: 25px;
+
+
+    font-size: 0.9em;
+
+
+    color: #555;
+
+
+    font-weight: 500;
+
+
+}
+
+
+
+.weather-details-small p {
+
+
+    margin: 0;
+
+
+}
+
+
+
+.temp {
+
+
+    font-size: 4em;
+
+
+    font-weight: 300;
+
+
+    margin-top: 0;
+
+
+    margin-bottom: 30px;
+
+
+    color: #333;
+
+
+}
+
+
+
+.forecast-hours {
+
+
+    display: flex;
+
+
+    justify-content: space-around;
+
+
+    width: 100%;
+
+
+    border-top: 1px solid #eee;
+
+
+    padding-top: 20px;
+
+
+    margin-top: 20px;
+
+
+}
+
+
+
+.hour-item {
+
+
+    display: flex;
+
+
+    flex-direction: column;
+
+
+    font-size: 0.9em;
+
+
+    color: #888;
+
+
+}
+
+
+
+.hour-item span:first-child {
+
+
+    font-weight: 600;
+
+
+    color: #333;
+
+
+    margin-bottom: 5px;
+
+
+}
+
+
+
+.hour-item span:last-child {
+
+
+    font-weight: 500;
+
+
+}
+
+
+
+.hour-item .now {
+
+
+    color: #333;
+
+
+    font-weight: 700;
+
+
+}
+
+
+
+/* Estilos para el selector de temperatura */
+
+
+.temp-toggle {
+
+
+    position: absolute;
+
+
+    top: 20px;
+
+
+    right: 20px;
+
+
+}
+
+
+
+.temp-toggle-input {
+
+
+    position: absolute;
+
+
+    visibility: hidden;
+
+
+}
+
+
+
+.temp-toggle-label {
+
+
+    display: flex;
+
+
+    align-items: center;
+
+
+    justify-content: space-between;
+
+
+    width: 60px;
+
+
+    height: 30px;
+
+
+    background-color: #f1f1f1;
+
+
+    border-radius: 30px;
+
+
+    position: relative;
+
+
+    cursor: pointer;
+
+
+    transition: background-color 0.2s ease;
+
+
+}
+
+
+
+.temp-toggle-label::after {
+
+
+    content: "°C";
+
+
+    position: absolute;
+
+
+    left: 5px;
+
+
+    font-size: 1em;
+
+
+    color: #333;
+
+
+    font-weight: 600;
+
+
+    transition: all 0.2s ease;
+
+
+}
+
+
+
+.temp-toggle-label::before {
+
+
+    content: "";
+
+
+    position: absolute;
+
+
+    width: 26px;
+
+
+    height: 26px;
+
+
+    background-color: #a8dadc;
+
+
+    border-radius: 50%;
+
+
+    left: 2px;
+
+
+    transition: all 0.2s ease;
+
+
+}
+
+
+
+.temp-toggle-input:checked + .temp-toggle-label {
+
+
+    background-color: #a8dadc;
+
+
+}
+
+
+
+.temp-toggle-input:checked + .temp-toggle-label::after {
+
+
+    content: "°F";
+
+
+    left: 33px;
+
+
+    color: #ffffff;
+
+
+}
+
+
+
+.temp-toggle-input:checked + .temp-toggle-label::before {
+
+
+    transform: translateX(30px);
+
+
+    background-color: #ffffff;
+
+
+} 

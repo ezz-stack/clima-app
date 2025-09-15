@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>app del clima</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <div class="card">
+
+        <div class="header-nav">
+
+            <span class="nav-arrow left-arrow">&lt;</span>
+
+            <span class="nav-date" data-index="0"></span>
+
+            <span class="nav-date current-date" data-index="1"></span>
+
+            <span class="nav-date" data-index="2"></span>
+
+            <span class="nav-arrow right-arrow">&gt;</span>
+
+        </div>
+
+
+        <div class="search">
+
+            <input type="text" id="city-input" placeholder="Ciudad" spellcheck="false">
+
+        </div>
+
+       
+
+        <div class="search-history" style="display:none;">
+
+            <p>Historial de Búsqueda:</p>
+
+            <div class="history-list"></div>
+
+        </div>
+
+
+        <div class="error-message" style="display:none;">Ciudad no encontrada.</div>
+
+       
+
+        <div class="loading-spinner" style="display:none;"></div>
+
+
+        <div class="weather-display" style="display:none;">
+
+            <div class="temp-toggle">
+
+                <input type="checkbox" id="temp-unit" class="temp-toggle-input">
+
+                <label for="temp-unit" class="temp-toggle-label"></label>
+
+            </div>
+
+            <h2 class="city"></h2>
+
+            <div class="main-weather-icon">
+
+                <span class="rain-drop"></span>
+
+                <span class="rain-drop"></span>
+
+                <span class="rain-drop"></span>
+
+                <span class="rain-drop"></span>
+
+                <span class="rain-drop"></span>
+
+            </div>
+
+            <div class="weather-details-small">
+
+                <p class="humidity"></p>
+
+                <p class="pressure"></p>
+
+                <p class="wind"></p>
+
+            </div>
+
+            <h1 class="temp"></h1>
+
+            <div class="forecast-hours"></div>
+
+        </div>
+
+    </div>
+
+   
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
